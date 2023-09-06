@@ -99,10 +99,11 @@
             height: 35px;
             border-radius: 20px;
         }
-        div.voirplus a
-        {
+
+        div.voirplus a {
             text-decoration: none;
         }
+
         form select {
             padding-left: 10px;
         }
@@ -132,10 +133,12 @@
             font-weight: bolder;
             line-height: normal;
         }
-        p{
+
+        p {
             text-align: left;
         }
-        p{}
+
+        p {}
     </style>
 </head>
 
@@ -172,12 +175,14 @@
 
                 <div class="row">
                     <div class="col-6">
-                        <h2>{{$boutique[0]->nom}}</h2>
-                        <p class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt esse voluptates laborum,
+                        <h2>{{ $boutique[0]->nom }}</h2>
+                        <p class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt esse
+                            voluptates laborum,
                             ui modi dicta maiores repellat recusandae vel sunt natus soluta quidem autem saepe harum
                             suscipit cum totam, asperiores iste nesciunt quis architecto. Nisi sit doloremque obcaecati
                             delectus quas.</p>
-                            <a href="{{$boutique[0]->site_web}}"><img class="me-2" src="{{ asset('img/site.svg') }}" alt="phone" height="30" width="30" />ALLER SUR LE SITE</a>
+                        <a href="{{ $boutique[0]->site_web }}"><img class="me-2" src="{{ asset('img/site.svg') }}"
+                                alt="phone" height="30" width="30" />ALLER SUR LE SITE</a>
                     </div>
                     <div class="col-6">
                         <img class="float-start" src="{{ asset('img/image1.jpeg') }}" alt="phone">
@@ -188,17 +193,27 @@
                 <div class="col-6">
                     <h3>CONTACTEZ-NOUS</h3>
                     <div class="mb-2">
-                        <img src="{{ asset('img/phone.svg') }}" class="me-2" alt="phone" height="30" width="30" /><span>{{$boutique[0]->telephone}}</span>
+                        <img src="{{ asset('img/phone.svg') }}" class="me-2" alt="phone" height="30"
+                            width="30" /><span>{{ $boutique[0]->telephone }}</span>
                     </div>
                     <div class="mb-2">
-                        <img src="{{ asset('img/email.svg') }}" class="me-2" alt="phone" height="30" width="30" /><span>{{$boutique[0]->email}}</span>
+                        <img src="{{ asset('img/email.svg') }}" class="me-2" alt="phone" height="30"
+                            width="30" /><span>{{ $boutique[0]->email }}</span>
                     </div>
                     <h3>SUIVEZ NOUS</h3>
                     <div class="text-center justify-content-center">
-                        <a class="ms-2" href="{{$boutique[0]->facebook}}"><img class="m-2" src="{{ asset('img/facebook.svg') }}" alt="phone" height="30" width="30" />Facebook</a>
-                        <a class="ms-2" href="{{$boutique[0]->instagram}}"><img class="m-2" src="{{ asset('img/instagram.svg') }}" alt="phone" height="30" width="30" />Instagram</a>
-                        <a class="ms-2" href="{{$boutique[0]->tiktok}}"><img class="m-2" src="{{ asset('img/tiktok.svg') }}" alt="phone" height="30" width="30" />Tiktok</a>
-                        <a class="ms-2" href="{{$boutique[0]->youtube}}"><img class="m-2" src="{{ asset('img/youtube.svg') }}" alt="phone" height="30" width="30" />Youtube</a>
+                        <a class="ms-2" href="{{ $boutique[0]->facebook }}"><img class="m-2"
+                                src="{{ asset('img/facebook.svg') }}" alt="phone" height="30"
+                                width="30" />Facebook</a>
+                        <a class="ms-2" href="{{ $boutique[0]->instagram }}"><img class="m-2"
+                                src="{{ asset('img/instagram.svg') }}" alt="phone" height="30"
+                                width="30" />Instagram</a>
+                        <a class="ms-2" href="{{ $boutique[0]->tiktok }}"><img class="m-2"
+                                src="{{ asset('img/tiktok.svg') }}" alt="phone" height="30"
+                                width="30" />Tiktok</a>
+                        <a class="ms-2" href="{{ $boutique[0]->youtube }}"><img class="m-2"
+                                src="{{ asset('img/youtube.svg') }}" alt="phone" height="30"
+                                width="30" />Youtube</a>
                         {{-- <a class="ms-2" href="{{$boutique[0]->twitter}}"><img class="m-2" src="{{ asset('img/twitter.svg') }}" alt="phone" height="30" width="30" />Twitter</a> --}}
                     </div>
                 </div>
@@ -213,9 +228,13 @@
         <!-- ========== End voirplus ========== -->
 
 
+        <div class="testgithub">
+            <h1>test github </h1>
+        </div>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-            crossorigin="anonymous"></script>
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+        </script>
 </body>
 
 </html>
