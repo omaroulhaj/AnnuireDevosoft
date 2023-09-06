@@ -135,6 +135,7 @@
         p{
             text-align: left;
         }
+        p{}
     </style>
 </head>
 
@@ -158,6 +159,7 @@
         <div class="row">
             <div class="col-12 mt-3 text-center">
                 <h1>LOGO DE L'application</h1>
+                <h1>LOGO DE L'application</h1>
             </div>
         </div>
     </div>
@@ -172,7 +174,7 @@
                     <div class="col-6">
                         <h2>{{$boutique[0]->nom}}</h2>
                         <p class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt esse voluptates laborum,
-                            qui modi dicta maiores repellat recusandae vel sunt natus soluta quidem autem saepe harum
+                            ui modi dicta maiores repellat recusandae vel sunt natus soluta quidem autem saepe harum
                             suscipit cum totam, asperiores iste nesciunt quis architecto. Nisi sit doloremque obcaecati
                             delectus quas.</p>
                             <a href="{{$boutique[0]->site_web}}"><img class="me-2" src="{{ asset('img/site.svg') }}" alt="phone" height="30" width="30" />ALLER SUR LE SITE</a>
