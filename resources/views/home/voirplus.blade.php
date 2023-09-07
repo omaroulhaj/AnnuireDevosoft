@@ -156,12 +156,12 @@
         </div>
     </nav>
     <!-- ========== End navbar ========== -->
+    <!-- ========== End navbar ========== -->
 
     <!-- ========== Start Logo ========== -->
     <div class="logo container">
         <div class="row">
             <div class="col-12 mt-3 text-center">
-                <h1>LOGO DE L'application</h1>
                 <h1>LOGO DE L'application</h1>
             </div>
         </div>
