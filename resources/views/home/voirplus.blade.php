@@ -137,12 +137,6 @@
         p {
             text-align: left;
         }
-
-        .testgithub {
-            color: red;
-            text-align: center
-        }
-        p{}
     </style>
 </head>
 
@@ -228,11 +222,7 @@
                 </div>
             </div>
         </div>
-        <div class="testgithub">
-            <h1> just test github push and pull</h1>
-            <h1> just test github push and pull</h1>
-            <h1> just test github push and pull</h1>
-        </div>
+     
         <!-- ========== End voirplus ========== -->
 
 
