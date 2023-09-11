@@ -159,7 +159,7 @@
     <div class="logo container">
         <div class="row">
             <div class="col-12 mt-3 text-center">
-                <h1>LOGO DE L'application</h1>
+                <img class="img-fluid mx-auto d-block" width="15%" height="15%" src="{{ asset('img/logo.png') }}" alt="phone">
             </div>
         </div>
     </div>
