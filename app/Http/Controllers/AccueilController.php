@@ -39,7 +39,14 @@ class AccueilController extends Controller
         else{
             $boutique=Boutique::where('categorie_id',$categorie_recherche)->where('ville_id',$ville_recherche)->get();
         }
-        return view('home.home',compact('ville','categorie','boutique'));
+        return view('home.filtrage',compact('ville','categorie','boutique'));
+    }
+    public function filtrage1()
+    {
+        $ville=Ville::all();
+        $categorie=Category::all();
+        $boutique=Boutique::all();
+        return view('home.filtrage',compact('ville','categorie','boutique'));
     }
     public function voirplus($id)
     {

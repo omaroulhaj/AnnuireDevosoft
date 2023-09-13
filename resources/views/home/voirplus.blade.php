@@ -22,14 +22,14 @@
             background-color: #E3E3E3;
         }
 
-        nav {
+        nav.navbar {
             background-color: #007A95;
             border-bottom-left-radius: 40px;
             border-bottom-right-radius: 40px;
             padding: 10px;
         }
 
-        nav a {
+        nav.navbar a {
             color: white;
             text-decoration: none;
             transition: all .5s ease-in;
@@ -37,7 +37,7 @@
             font-family: 'Inconsolata', 'Courier New', Courier, monospace;
         }
 
-        nav a:hover {
+        nav.navbar a:hover {
             color: white;
         }
 
@@ -160,6 +160,13 @@
         <div class="row">
             <div class="col-12 mt-3 text-center">
                 <img class="img-fluid mx-auto d-block" width="15%" height="15%" src="{{ asset('img/logo.png') }}" alt="phone">
+                <nav class="text-center justify-content-center" aria-label="breadcrumb">
+                    <ol class="breadcrumb text-center">
+                        <li class="breadcrumb-item"><a href="{{url('/home') }}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{url('/home/search') }}">Recherche</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Détails</li>
+                    </ol>
+                </nav>
             </div>
         </div>
     </div>

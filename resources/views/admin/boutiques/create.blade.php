@@ -153,6 +153,14 @@
                 <span class="help-block">{{ trans('cruds.boutique.fields.latitude_helper') }}</span>
             </div>
             <div class="form-group">
+                <label for="longitude">{{ trans('cruds.boutique.fields.galery') }}</label>
+                <input class="form-control {{ $errors->has('galery') ? 'is-invalid' : '' }}" type="file" name="galery_o" id="galery" value="{{ old('galery', '') }}" step="0.0000000001">
+                @if($errors->has('galery'))
+                    <span class="text-danger">{{ $errors->first('galery') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.boutique.fields.galery_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}
                 </button>
@@ -168,7 +176,7 @@
 @section('scripts')
 <script>
     var uploadedGaleryMap = {}
-Dropzone.options.galeryDropzone = {
+    Dropzone.options.galeryDropzone = {
     url: '{{ route('admin.boutiques.storeMedia') }}',
     maxFilesize: 100, // MB
     acceptedFiles: '.jpeg,.jpg,.png,.gif',

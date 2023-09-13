@@ -22,13 +22,12 @@
             background-color: #E3E3E3;
         }
 
+        div.filtrage a {
+            text-decoration: none;
+        }
         nav.navbar {
             background-color: #007A95!important;
             padding: 10px;
-        }
-
-        div.filtrage a {
-            text-decoration: none;
         }
 
         nav.navbar a {
@@ -37,6 +36,10 @@
             transition: all .5s ease-in;
             font-size: 20px;
             font-family: 'Inconsolata', 'Courier New', Courier, monospace;
+        }
+        nav a{
+            text-decoration: none;
+            transition: all .5s ease-in;
         }
 
         nav.navbar a:hover {
@@ -57,10 +60,12 @@
             border-bottom-left-radius: 40px;
             border-bottom-right-radius: 40px;
         }
+
         div.filtrage1 {
             background-color: #fff;
             padding: 45px 10px;
-     
+            margin: 0px;
+
         }
 
         .row .card .card-body span {
@@ -128,7 +133,20 @@
             border-radius: 5px;
             width: 100px;
         }
-        .test{
+        .card_c
+        {
+            border:0.5px solid #5e5e5e7f;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,700&family=Inconsolata&family=Istok+Web:wght@700&display=swap');
+        span.Boutique{
+            font-family:"Istok Web",Georgia, 'Times New Roman', Times, serif;
+            font-weight: 700;
+            font-size:larger;
+        }
+
+        .test {
             border: 3px solid red;
         }
     </style>
@@ -140,77 +158,67 @@
     <!-- ========== End navbar ========== -->
 
     <!-- ========== Start Logo ========== -->
-    {{-- <div class="logo container">
-        <div class="row">
-            <div class="col-12 mt-3 text-center">
-                <img class="img-fluid mx-auto d-block" width="15%" height="15%" src="{{ asset('img/logo.png') }}"
-                    alt="phone">
+    <div class="logo container justify-content-center">
+        <div class="row justify-content-center">
+            <div class="col-12 justify-content-center mt-3 text-center">
+                <img class="img-fluid mx-auto d-block" width="15%" height="15%" src="{{ asset('img/logo.png') }}" alt="phone">
+                <nav class="text-center justify-content-center" aria-label="breadcrumb">
+                    <ol class="breadcrumb text-center">
+                        <li class="breadcrumb-item"><a href="{{ url('/home') }}">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Recherche</li>
+                    </ol>
+                </nav>
             </div>
-        </div>
-    </div> --}}
-    <!-- ========== End Logo ========== -->
-<div class="container-fluid">
-    <div class="row align-items-center justify-content-center text-center p-0 mb-4 mt-4">
-
-        <div class="col-5 filtrage">
-            <form action="{{ url('/home/search') }}" method="post">
-                @csrf
-                <span>
-                    <label class="from-label" for="ville">Ville</label>
-                    <select name="ville" id="ville">
-                        <option value="">Select ville</option>
-                        @foreach ($ville as $v)
-                            <option value="{{ $v->id }}">{{ $v->nom }}</option>
-                        @endforeach
-                    </select>
-                </span>
-                <span>
-                    <label class="ms-3 from-label" for="Categorie">Categorie</label>
-                    <select name="Categorie" id="Categorie">
-                        <option value="">Select categorie</option>
-                        @foreach ($categorie as $c)
-                            <option value="{{ $c->id }}">{{ $c->nom }}</option>
-                        @endforeach
-                    </select>
-                </span>
-                <button type="submit" class="ms-3 button">Search</button>
-            </form>
-        </div>
-        {{-- <div>
-            <hr class="border border-dark border-2">
-        </div> --}}
-        <div class="col-5">
-            <img class="img-fluid " src="{{ asset('img/photo.png') }}" alt="phone">
         </div>
     </div>
-</div>
-    <div class="container-fluid">
-        <div class="filtrage1 row text-center">
-        {{-- 
-            <div>
-                <hr class="border border-dark border-2">
-            </form>
-        </div> 
-        --}}
-        <h3>Categorie</h3>
-        <div class="col-3">
-            <div class="card">
-                <div class="card-body text-center">
-                    <span>Telephone</span>
-                    <img class="img-fluid mx-auto" src="{{ asset('img/phonecategorie.svg') }}" alt="phone">
+    <!-- ========== End Logo ========== -->
 
-                </div>
+    <!-- ========== Start Filtrage ========== -->
+    <div class="container-fluid m-0 p-0">
+        <div class="d-flex justify-content-start w-100 filtrage1">
+            <div class="flex-shrink-5">
+                <form action="{{ url('/home/search') }}" method="post">
+                    @csrf
+                    <div class="">
+                        <label class="from-label" for="ville">Ville</label>
+                        <select name="ville" id="ville">
+                            <option value="">Select ville</option>
+                            @foreach ($ville as $v)
+                                <option value="{{ $v->id }}">{{ $v->nom }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="">
+                        <label class="from-label" for="Categorie">Categorie</label>
+                        <select name="Categorie" id="Categorie">
+                            <option value="">Select categorie</option>
+                            @foreach ($categorie as $c)
+                                <option value="{{ $c->id }}">{{ $c->nom }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <button type="submit" class="ms-3 button">Search</button>
+                </form>
             </div>
-        </div>
-        <div class="col-3">
-            <div class="card">
-                <div class="card-body text-center">
-                    <span>Vêtement</span>
-                    <img class="img-fluid mx-auto" src="{{ asset('img/vetement.svg') }}" alt="phone">
+            <div class="ms-3 w-100">
 
-                </div>
+                @foreach ($boutique as $b)
+                        <div class="d-flex m-2 card_c">
+                            <div class="text-center">
+                                <img class="img-fluid mx-auto" width="50%" width="50%" src="{{ asset('img/logo.png') }}" alt="phone">
+                            </div>
+                            <div class="w-100">
+                                <div class="mb-2"><span class="Boutique">{{ $b->nom }}</span></div>
+                                <span class="me-3"><img class="img-fluid mx-auto" height="30" width="30" src="{{asset('img/localisation.svg')}}" alt="phone">{{ $ville->find($b->ville_id)->nom }}</span>
+                                <span class="me-3"><img class="img-fluid mx-auto" height="30" width="30" src="{{asset('img/categorie.svg')}}" alt="phone">{{ $categorie->find($b->categorie_id)->nom }}</span>
+                                <div class="card-footer text-center p-0 m-0">
+                                    <a href="{{ url('home/details/' . $b->id) }}">Voir plus ...</a>
+                                </div>
+
+                            </div>
+                        </div>
+                @endforeach
             </div>
-        </div>
         </div>
     </div>
 

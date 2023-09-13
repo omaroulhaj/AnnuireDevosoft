@@ -46,7 +46,9 @@ class BoutiquesController extends Controller
         foreach ($request->input('galery', []) as $file) {
             $boutique->addMedia(storage_path('tmp/uploads/' . basename($file)))->toMediaCollection('galery');
         }
-
+        
+        $boutique->image_url=$request->file('galery_o')->store('profile','public');
+        
         foreach ($request->input('video', []) as $file) {
             $boutique->addMedia(storage_path('tmp/uploads/' . basename($file)))->toMediaCollection('video');
         }

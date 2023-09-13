@@ -54,3 +54,4 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 
     Route::get('/home',[AccueilController::class,'home']);
     Route::get('home/details/{id}',[AccueilController::class,'voirplus']);
     Route::post('/home/search',[AccueilController::class,'filtrage']);
+    Route::get('/home/search',[AccueilController::class,'filtrage1']);
