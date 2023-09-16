@@ -7,14 +7,14 @@ use App\Models\Ville;
 use App\Models\Category;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class AccueilController extends Controller
 {
     public function home()
     {
         $ville=Ville::all();
         $categorie=Category::all();
-        $boutique=Boutique::all();
+        $boutique=DB::table('boutiques')->selectRaw('count(id) as cnt')->pluck('cnt');
         return view('home.home',compact('ville','categorie','boutique'));
     }
     public function filtrage(Request $request)
@@ -46,6 +46,20 @@ class AccueilController extends Controller
         $ville=Ville::all();
         $categorie=Category::all();
         $boutique=Boutique::all();
+        return view('home.filtrage',compact('ville','categorie','boutique'));
+    }
+    public function vetement()
+    {
+        $ville=Ville::all();
+        $categorie=Category::all();
+        $boutique=Boutique::where('categorie_id','2')->get();
+        return view('home.filtrage',compact('ville','categorie','boutique'));
+    }
+    public function phone()
+    {
+        $ville=Ville::all();
+        $categorie=Category::all();
+        $boutique=Boutique::where('categorie_id','1')->get();
         return view('home.filtrage',compact('ville','categorie','boutique'));
     }
     public function voirplus($id)

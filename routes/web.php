@@ -2,14 +2,14 @@
 use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\SearchController;
 
-Route::redirect('/', '/login');
-Route::get('/home', function () {
-    if (session('status')) {
-        return redirect()->route('admin.home')->with('status', session('status'));
-    }
+Route::redirect('/', '/home');
+// Route::get('/home', function () {
+//     if (session('status')) {
+//         return redirect()->route('admin.home')->with('status', session('status'));
+//     }
 
-    return redirect()->route('admin.home');
-});
+//     return redirect()->route('admin.home');
+// });
 
 Auth::routes();
 
@@ -50,8 +50,11 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 
         Route::post('profile/destroy', 'ChangePasswordController@destroy')->name('password.destroyProfile');
     }
 });
-    // HOME 
-    Route::get('/home',[AccueilController::class,'home']);
-    Route::get('home/details/{id}',[AccueilController::class,'voirplus']);
-    Route::post('/home/search',[AccueilController::class,'filtrage']);
-    Route::get('/home/search',[AccueilController::class,'filtrage1']);
+    
+// HOME 
+Route::get('/home',[AccueilController::class,'home']);
+Route::get('home/details/{id}',[AccueilController::class,'voirplus']);
+Route::post('/home/search',[AccueilController::class,'filtrage']);
+Route::get('/home/search',[AccueilController::class,'filtrage1']);
+Route::get('/home/search/telephone',[AccueilController::class,'phone']);
+Route::get('/home/search/vetement',[AccueilController::class,'vetement']);

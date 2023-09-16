@@ -3,8 +3,8 @@
 <div class="login-box">
     <div class="login-logo">
         <div class="login-logo">
-            <a href="#">
-                {{ trans('panel.site_title') }}
+            <a href="{{ route('admin.home') }}">
+                <img class="img-fluid mx-auto d-block" width="60%" height="60%" src="{{ asset('img/logo.png') }}">
             </a>
         </div>
     </div>

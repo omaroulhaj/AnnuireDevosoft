@@ -13,33 +13,6 @@
         rel="stylesheet">
 
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            background-color: #E3E3E3;
-        }
-
-        nav.navbar {
-            background-color: #007A95;
-            border-bottom-left-radius: 40px;
-            border-bottom-right-radius: 40px;
-            padding: 10px;
-        }
-
-        nav.navbar a {
-            color: white;
-            text-decoration: none;
-            transition: all .5s ease-in;
-            font-size: 20px;
-            font-family: 'Inconsolata', 'Courier New', Courier, monospace;
-        }
-
-        nav.navbar a:hover {
-            color: white;
-        }
 
         div.logo .row .col-12 {
             text-transform: uppercase;
@@ -50,8 +23,6 @@
         div.voirplus {
             background-color: #fff;
             padding: 10px;
-            border-top-left-radius: 40px;
-            border-top-right-radius: 40px;
         }
 
         .row .card .card-body span {
@@ -142,28 +113,20 @@
 
 <body>
     <!-- ========== Start Navbar ========== -->
-    <nav class="">
-        <div class="container-fluid">
-            <div class="row">
+    @include('home.navbar')
 
-                <div class="col-12 text-center">
-                    <a href="#">Navbar</a>
-                </div>
-            </div>
-
-        </div>
-    </nav>
     <!-- ========== End navbar ========== -->
 
     <!-- ========== Start Logo ========== -->
     <div class="logo container">
         <div class="row">
             <div class="col-12 mt-3 text-center">
-                <img class="img-fluid mx-auto d-block" width="15%" height="15%" src="{{ asset('img/logo.png') }}" alt="phone">
+                <img class="img-fluid mx-auto d-block" width="15%" height="15%" src="{{ asset('img/logo.png') }}"
+                    alt="phone">
                 <nav class="text-center justify-content-center" aria-label="breadcrumb">
                     <ol class="breadcrumb text-center">
-                        <li class="breadcrumb-item"><a href="{{url('/home') }}">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{url('/home/search') }}">Recherche</a></li>
+                        <li class="breadcrumb-item"><a href="{{ url('/home') }}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{ url('/home/search') }}">Recherche</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Détails</li>
                     </ol>
                 </nav>
@@ -173,11 +136,8 @@
     <!-- ========== End Logo ========== -->
 
     <!-- ========== Start voirplus ========== -->
-    <div class="row justify-content-center">
-        <div class="col-11 voirplus container-fluid">
-            <div class="row text-center p-3">
+        <div class="row justify-content-center p-4 voirplus container-fluid">
 
-                <div class="row">
                     <div class="col-6">
                         <h2>{{ $boutique[0]->nom }}</h2>
                         <p class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt esse
@@ -191,9 +151,8 @@
                     <div class="col-6">
                         <img class="float-start" src="{{ asset('img/image1.jpeg') }}" alt="phone">
                     </div>
-                </div>
-            </div>
-            <div class="row">
+        
+        <div class="">
                 <div class="col-6">
                     <h3>CONTACTEZ-NOUS</h3>
                     <div class="mb-2">
@@ -221,7 +180,7 @@
                         {{-- <a class="ms-2" href="{{$boutique[0]->twitter}}"><img class="m-2" src="{{ asset('img/twitter.svg') }}" alt="phone" height="30" width="30" />Twitter</a> --}}
                     </div>
                 </div>
-                <div class="col-6 ju">
+                <div class="col-6">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108696.7144146591!2d-8.223894035458656!3d31.640083554240878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafedbb73ae8c67%3A0xa31d60834d75df43!2sBoutique%20younes!5e0!3m2!1sfr!2sma!4v1693820392766!5m2!1sfr!2sma"
                         width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
@@ -229,8 +188,12 @@
                 </div>
             </div>
         </div>
-     
+    </div>
+</div>
+
+
         <!-- ========== End voirplus ========== -->
+        @include('home.footer')
 
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

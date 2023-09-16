@@ -12,7 +12,8 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs("admin.home") ? "active" : "" }}" href="{{ route("admin.home") }}">
+                    <a class="nav-link {{ request()->routeIs('admin.home') ? 'active' : '' }}"
+                        href="{{ route('admin.home') }}">
                         <i class="fas fa-fw fa-tachometer-alt nav-icon">
                         </i>
                         <p>
@@ -21,8 +22,10 @@
                     </a>
                 </li>
                 @can('user_management_access')
-                    <li class="nav-item has-treeview {{ request()->is("admin/permissions*") ? "menu-open" : "" }} {{ request()->is("admin/roles*") ? "menu-open" : "" }} {{ request()->is("admin/users*") ? "menu-open" : "" }}">
-                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/permissions*") ? "active" : "" }} {{ request()->is("admin/roles*") ? "active" : "" }} {{ request()->is("admin/users*") ? "active" : "" }}" href="#">
+                    <li
+                        class="nav-item has-treeview {{ request()->is('admin/permissions*') ? 'menu-open' : '' }} {{ request()->is('admin/roles*') ? 'menu-open' : '' }} {{ request()->is('admin/users*') ? 'menu-open' : '' }}">
+                        <a class="nav-link nav-dropdown-toggle {{ request()->is('admin/permissions*') ? 'active' : '' }} {{ request()->is('admin/roles*') ? 'active' : '' }} {{ request()->is('admin/users*') ? 'active' : '' }}"
+                            href="#">
                             <i class="fa-fw nav-icon fas fa-users">
 
                             </i>
@@ -34,7 +37,8 @@
                         <ul class="nav nav-treeview">
                             @can('permission_access')
                                 <li class="nav-item">
-                                    <a href="{{ route("admin.permissions.index") }}" class="nav-link {{ request()->is("admin/permissions") || request()->is("admin/permissions/*") ? "active" : "" }}">
+                                    <a href="{{ route('admin.permissions.index') }}"
+                                        class="nav-link {{ request()->is('admin/permissions') || request()->is('admin/permissions/*') ? 'active' : '' }}">
                                         <i class="fa-fw nav-icon fas fa-unlock-alt">
 
                                         </i>
@@ -46,7 +50,8 @@
                             @endcan
                             @can('role_access')
                                 <li class="nav-item">
-                                    <a href="{{ route("admin.roles.index") }}" class="nav-link {{ request()->is("admin/roles") || request()->is("admin/roles/*") ? "active" : "" }}">
+                                    <a href="{{ route('admin.roles.index') }}"
+                                        class="nav-link {{ request()->is('admin/roles') || request()->is('admin/roles/*') ? 'active' : '' }}">
                                         <i class="fa-fw nav-icon fas fa-briefcase">
 
                                         </i>
@@ -58,7 +63,8 @@
                             @endcan
                             @can('user_access')
                                 <li class="nav-item">
-                                    <a href="{{ route("admin.users.index") }}" class="nav-link {{ request()->is("admin/users") || request()->is("admin/users/*") ? "active" : "" }}">
+                                    <a href="{{ route('admin.users.index') }}"
+                                        class="nav-link {{ request()->is('admin/users') || request()->is('admin/users/*') ? 'active' : '' }}">
                                         <i class="fa-fw nav-icon fas fa-user">
 
                                         </i>
@@ -73,7 +79,8 @@
                 @endcan
                 @can('category_access')
                     <li class="nav-item">
-                        <a href="{{ route("admin.categories.index") }}" class="nav-link {{ request()->is("admin/categories") || request()->is("admin/categories/*") ? "active" : "" }}">
+                        <a href="{{ route('admin.categories.index') }}"
+                            class="nav-link {{ request()->is('admin/categories') || request()->is('admin/categories/*') ? 'active' : '' }}">
                             <i class="fa-fw nav-icon far fa-check-circle">
 
                             </i>
@@ -85,7 +92,8 @@
                 @endcan
                 @can('boutique_access')
                     <li class="nav-item">
-                        <a href="{{ route("admin.boutiques.index") }}" class="nav-link {{ request()->is("admin/boutiques") || request()->is("admin/boutiques/*") ? "active" : "" }}">
+                        <a href="{{ route('admin.boutiques.index') }}"
+                            class="nav-link {{ request()->is('admin/boutiques') || request()->is('admin/boutiques/*') ? 'active' : '' }}">
                             <i class="fa-fw nav-icon fas fa-shopping-bag">
 
                             </i>
@@ -97,7 +105,8 @@
                 @endcan
                 @can('ville_access')
                     <li class="nav-item">
-                        <a href="{{ route("admin.villes.index") }}" class="nav-link {{ request()->is("admin/villes") || request()->is("admin/villes/*") ? "active" : "" }}">
+                        <a href="{{ route('admin.villes.index') }}"
+                            class="nav-link {{ request()->is('admin/villes') || request()->is('admin/villes/*') ? 'active' : '' }}">
                             <i class="fa-fw nav-icon fas fa-map-marker">
 
                             </i>
@@ -107,10 +116,11 @@
                         </a>
                     </li>
                 @endcan
-                @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
+                @if (file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
                     @can('profile_password_edit')
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->is('profile/password') || request()->is('profile/password/*') ? 'active' : '' }}" href="{{ route('profile.password.edit') }}">
+                            <a class="nav-link {{ request()->is('profile/password') || request()->is('profile/password/*') ? 'active' : '' }}"
+                                href="{{ route('profile.password.edit') }}">
                                 <i class="fa-fw fas fa-key nav-icon">
                                 </i>
                                 <p>
@@ -121,7 +131,8 @@
                     @endcan
                 @endif
                 <li class="nav-item">
-                    <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
+                    <a href="#" class="nav-link"
+                        onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                         <p>
                             <i class="fas fa-fw fa-sign-out-alt nav-icon">
 
