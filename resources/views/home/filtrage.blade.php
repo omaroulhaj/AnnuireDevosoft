@@ -15,7 +15,7 @@
     <style>
     
 
-        div.logo .row .col-12 {
+        div.logo {
             text-transform: uppercase;
             font-family: 'Istok Web', Verdana, Tahoma, sans-serif;
             font-weight: bold;
@@ -138,7 +138,14 @@
         .test {
             border: 3px solid red;
         }
-
+        img.fil
+        {
+            object-fit: cover;
+            width: 60%;
+        }
+        div.logo1 {
+            width: 20%;
+        }
         
     </style>
 </head>
@@ -198,9 +205,9 @@
 
                 @foreach ($boutique as $b)
                     <div class="d-flex m-2 card_c">
-                        <div class="text-center">
-                            <img class="img-fluid mx-auto" width="50%" width="50%"
-                                src="{{ asset('img/logo.png') }}" alt="phone">
+                        <div class="text-center logo1">
+                            <img class="img-fluid fil mx-auto" width="20%" width="20%"
+                                src="/storage/{{$b->image_logo}}" alt="phone">
                         </div>
                         <div class="w-100">
                             <div class="mb-2"><span class="Boutique">{{ $b->nom }}</span></div>

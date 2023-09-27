@@ -124,7 +124,7 @@
                                 <i class="fa-fw fas fa-key nav-icon">
                                 </i>
                                 <p>
-                                    {{ trans('global.change_password') }}
+                                    {{ trans('global.my_profile') }}
                                 </p>
                             </a>
                         </li>

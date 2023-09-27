@@ -95,19 +95,40 @@
             width: 100px;
         }
 
-        .row .col-6 h3 {
-            color: #007A95;
-            text-align: center;
-            font-family: Inconsolata, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: 40;
-            font-style: normal;
-            font-weight: bolder;
-            line-height: normal;
-        }
+       
 
         p {
-            text-align: left;
+            text-align: left;   
+            font-size: 30px;
+            line-height: 1.3em;
+            color: #000;
+            font-family: Jost, Verdana, Geneva, Tahoma, sans-serif !important;
         }
+        
+        
+        h2 {
+            position: relative;
+            display: block;
+            font-family: Jost, Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 35px;
+            line-height: 1.2em;
+            color: #007A95;
+            font-weight: 500;
+            margin-bottom: 50px;
+        }
+        img.fil{
+            object-fit: cover !important;
+            width: 100%;
+        }
+        .log1 {
+        background: #DBE5F7 !important;
+        font-family: Jost, Verdana, Geneva, Tahoma, sans-serif !important;
+        color: #004cff !important;
+        font-size: 14px !important;
+        padding: 10px;
+        border-radius:5px !important;
+        }
+
     </style>
 </head>
 
@@ -136,60 +157,65 @@
     <!-- ========== End Logo ========== -->
 
     <!-- ========== Start voirplus ========== -->
-        <div class="row justify-content-center p-4 voirplus container-fluid">
-
-                    <div class="col-6">
-                        <h2>{{ $boutique[0]->nom }}</h2>
-                        <p class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt esse
-                            voluptates laborum,
-                            qui modi dicta maiores repellat recusandae vel sunt natus soluta quidem autem saepe harum
-                            suscipit cum totam, asperiores iste nesciunt quis architecto. Nisi sit doloremque obcaecati
-                            delectus quas.</p>
-                        <a href="{{ $boutique[0]->site_web }}"><img class="me-2" src="{{ asset('img/site.svg') }}"
-                                alt="phone" height="30" width="30" />ALLER SUR LE SITE</a>
-                    </div>
-                    <div class="col-6">
-                        <img class="float-start" src="{{ asset('img/image1.jpeg') }}" alt="phone">
-                    </div>
-        
-        <div class="">
-                <div class="col-6">
-                    <h3>CONTACTEZ-NOUS</h3>
-                    <div class="mb-2">
+        <div class="row justify-content-center text-center m-0 p-4 voirplus container-fluid">
+            <div class="col-1 p-0 m-0">
+                <img src="/storage/{{$boutique[0]->image_logo}}" class="img-fluid mb-2 mx-auto"/>
+            </div>
+            <h2 class="mt-4">{{ $boutique[0]->nom }}</h2>
+            <div></div>
+            <div class="col-6">
+                <p class="mb-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt esse
+                    voluptates laborum,
+                    qui modi dicta maiores repellat recusandae vel sunt natus soluta quidem autem saepe harum
+                    suscipit cum totam, asperiores iste nesciunt quis architecto. Nisi sit doloremque obcaecati
+                    delectus quas.
+                </p>
+                <a class="log1 mt-2" href="{{$boutique[0]->site_web}}">
+                    <img class="me-2" src="{{ asset('img/site.svg') }}" alt="phone" height="30" width="30">
+                    ALLER SUR LE SITE
+                </a>
+            </div>
+            <div class="col-6">
+                <img class="float-start fil" src="/storage/{{$boutique[0]->image_url}}" alt="phone">
+            </div>
+            <div class="row justify-content-center text-center ">
+                <h2 class="mt-4">CONTACTEZ-NOUS</h2>
+                <div class="col-6 text-start">
+                    <div class="mb-3 me-5">
                         <img src="{{ asset('img/phone.svg') }}" class="me-2" alt="phone" height="30"
-                            width="30" /><span>{{ $boutique[0]->telephone }}</span>
+                            width="30" /><span class="ms-2">{{ $boutique[0]->telephone }}</span>
                     </div>
-                    <div class="mb-2">
+                    <div class="me-5">
                         <img src="{{ asset('img/email.svg') }}" class="me-2" alt="phone" height="30"
-                            width="30" /><span>{{ $boutique[0]->email }}</span>
-                    </div>
-                    <h3>SUIVEZ NOUS</h3>
-                    <div class="text-center justify-content-center">
-                        <a class="ms-2" href="{{ $boutique[0]->facebook }}"><img class="m-2"
-                                src="{{ asset('img/facebook.svg') }}" alt="phone" height="30"
-                                width="30" />Facebook</a>
-                        <a class="ms-2" href="{{ $boutique[0]->instagram }}"><img class="m-2"
-                                src="{{ asset('img/instagram.svg') }}" alt="phone" height="30"
-                                width="30" />Instagram</a>
-                        <a class="ms-2" href="{{ $boutique[0]->tiktok }}"><img class="m-2"
-                                src="{{ asset('img/tiktok.svg') }}" alt="phone" height="30"
-                                width="30" />Tiktok</a>
-                        <a class="ms-2" href="{{ $boutique[0]->youtube }}"><img class="m-2"
-                                src="{{ asset('img/youtube.svg') }}" alt="phone" height="30"
-                                width="30" />Youtube</a>
-                        {{-- <a class="ms-2" href="{{$boutique[0]->twitter}}"><img class="m-2" src="{{ asset('img/twitter.svg') }}" alt="phone" height="30" width="30" />Twitter</a> --}}
+                            width="30" /><span class="ms-2">{{ $boutique[0]->email }}</span>
                     </div>
                 </div>
-                <div class="col-6">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108696.7144146591!2d-8.223894035458656!3d31.640083554240878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafedbb73ae8c67%3A0xa31d60834d75df43!2sBoutique%20younes!5e0!3m2!1sfr!2sma!4v1693820392766!5m2!1sfr!2sma"
-                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <h2 class="mt-4">SUIVEZ NOUS</h2>
+                <div class="text-center col-6 m-0 p-0  justify-content-center">
+                    <a class="ms-2 p-0" href="{{ $boutique[0]->facebook }}"><img class="m-2"
+                            src="{{ asset('img/facebook.svg') }}" alt="phone" height="30"
+                            width="30" />Facebook</a>
+                    <a class="ms-2 p-0" href="{{ $boutique[0]->instagram }}"><img class="m-2"
+                            src="{{ asset('img/instagram.svg') }}" alt="phone" height="30"
+                            width="30" />Instagram</a>
+                    <a class="ms-2 p-0" href="{{ $boutique[0]->tiktok }}"><img class="m-2"
+                            src="{{ asset('img/tiktok.svg') }}" alt="phone" height="30"
+                            width="30" />Tiktok</a>
+                    <a class="ms-2 p-0" href="{{ $boutique[0]->youtube }}"><img class="m-2"
+                            src="{{ asset('img/youtube.svg') }}" alt="phone" height="30"
+                            width="30" />Youtube</a>
+                    {{-- <a class="ms-2" href="{{$boutique[0]->twitter}}"><img class="m-2" src="{{ asset('img/twitter.svg') }}" alt="phone" height="30" width="30" />Twitter</a> --}}
                 </div>
             </div>
+            <div class="col-6">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108696.7144146591!2d-8.223894035458656!3d31.640083554240878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafedbb73ae8c67%3A0xa31d60834d75df43!2sBoutique%20younes!5e0!3m2!1sfr!2sma!4v1693820392766!5m2!1sfr!2sma"
+                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
         </div>
-    </div>
-</div>
+    
 
 
         <!-- ========== End voirplus ========== -->

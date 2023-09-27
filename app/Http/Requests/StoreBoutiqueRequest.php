@@ -40,6 +40,10 @@ class StoreBoutiqueRequest extends FormRequest
                 'string',
                 'nullable',
             ],
+            'image_o' => [
+                'string',
+                'nullable',
+            ],
             'galery' => [
                 'array',
             ],

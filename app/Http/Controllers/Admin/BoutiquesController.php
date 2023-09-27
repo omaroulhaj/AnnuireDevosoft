@@ -48,7 +48,7 @@ class BoutiquesController extends Controller
         }
         
         $boutique->image_url=$request->file('galery_o')->store('profile','public');
-        
+        $boutique->image_logo=$request->file('galery_logo')->store('profile','public');
         foreach ($request->input('video', []) as $file) {
             $boutique->addMedia(storage_path('tmp/uploads/' . basename($file)))->toMediaCollection('video');
         }
@@ -56,7 +56,7 @@ class BoutiquesController extends Controller
         if ($media = $request->input('ck-media', false)) {
             Media::whereIn('id', $media)->update(['model_id' => $boutique->id]);
         }
-
+        $boutique->save();
         return redirect()->route('admin.boutiques.index');
     }
 

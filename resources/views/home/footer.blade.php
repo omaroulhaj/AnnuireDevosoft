@@ -48,7 +48,6 @@
                     </ul>
                 </div>
                 <!--Grid column-->
-
                 <!--Grid column-->
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase mb-4">Horaires d’ouverture</h5>
@@ -78,7 +77,7 @@
 
         <!-- Copyright -->
         <div class="text-center p-3 copyright" style="background-color: #EFF4FC;">
-            © 2023 Copyright: Omar OULHAJ
+            © 2023 Copyright: Zakaria KEROUMMI and Omar OULHAJ
         </div>
         <!-- Copyright -->
     </footer>

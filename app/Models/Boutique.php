@@ -6,6 +6,7 @@ use DateTimeInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Storage;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -50,6 +51,7 @@ class Boutique extends Model implements HasMedia
         'created_at',
         'updated_at',
         'deleted_at',
+        'image_url',
     ];
 
     protected function serializeDate(DateTimeInterface $date)
@@ -89,4 +91,5 @@ class Boutique extends Model implements HasMedia
     {
         return $this->getMedia('video');
     }
+  
 }

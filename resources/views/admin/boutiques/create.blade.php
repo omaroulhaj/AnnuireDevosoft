@@ -79,22 +79,20 @@
                 <span class="help-block">{{ trans('cruds.boutique.fields.image_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="galery">{{ trans('cruds.boutique.fields.galery') }}</label>
-                <div class="needsclick dropzone {{ $errors->has('galery') ? 'is-invalid' : '' }}" id="galery-dropzone">
-                </div>
+                <label for="longitude">{{ trans('cruds.boutique.fields.galery') }}</label>
+                <input class="form-control {{ $errors->has('galery') ? 'is-invalid' : '' }}" type="file" name="galery_o" id="galery" value="{{ old('galery', '') }}" step="0.0000000001">
                 @if($errors->has('galery'))
                     <span class="text-danger">{{ $errors->first('galery') }}</span>
                 @endif
-                <span class="help-block">{{trans('cruds.boutique.fields.galery_helper')}}</span>
+                <span class="help-block">{{ trans('cruds.boutique.fields.galery_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="video">{{ trans('cruds.boutique.fields.video') }}</label>
-                <div class="needsclick dropzone {{ $errors->has('video') ? 'is-invalid' : '' }}" id="video-dropzone">
-                </div>
-                @if($errors->has('video'))
-                    <span class="text-danger">{{ $errors->first('video') }}</span>
+                <label for="longitude">Logo</label>
+                <input class="form-control {{ $errors->has('galery') ? 'is-invalid' : '' }}" type="file" name="galery_logo" id="galery" value="{{ old('galery', '') }}" step="0.0000000001">
+                @if($errors->has('galery'))
+                    <span class="text-danger">{{ $errors->first('galery') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.boutique.fields.video_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.boutique.fields.galery_helper') }}</span>
             </div>
             <div class="form-group">
                 <label for="site_web">{{ trans('cruds.boutique.fields.site_web') }}</label>
@@ -152,14 +150,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.boutique.fields.latitude_helper') }}</span>
             </div>
-            <div class="form-group">
-                <label for="longitude">{{ trans('cruds.boutique.fields.galery') }}</label>
-                <input class="form-control {{ $errors->has('galery') ? 'is-invalid' : '' }}" type="file" name="galery_o" id="galery" value="{{ old('galery', '') }}" step="0.0000000001">
-                @if($errors->has('galery'))
-                    <span class="text-danger">{{ $errors->first('galery') }}</span>
-                @endif
-                <span class="help-block">{{ trans('cruds.boutique.fields.galery_helper') }}</span>
-            </div>
+            
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}

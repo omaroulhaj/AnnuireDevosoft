@@ -1,15 +1,15 @@
 <?php
 use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\SearchController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/home');
-// Route::get('/home', function () {
-//     if (session('status')) {
-//         return redirect()->route('admin.home')->with('status', session('status'));
-//     }
-
-//     return redirect()->route('admin.home');
-// });
+Route::get('/admin/home', function () {
+  
+        return redirect()->route('admin.home')->with('status', 'you are logged in');
+    
+});
 
 Auth::routes();
 
